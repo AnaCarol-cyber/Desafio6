@@ -29,9 +29,7 @@ article, aside, footer, header, nav, section {
     box-sizing: border-box;
 }
 
-/* ================================
-   BODY
-================================ */
+/*   BODY */
 body {
     min-height: 100vh;
     display: flex;
@@ -42,13 +40,12 @@ body {
     color: #333;
 }
 
-/* ================================
-   HEADER
-================================ */
+/*  HEADER */
 .header {
     background-color: #FFFFFF;
     padding: 15px 30px;
-
+    border-bottom: 2px solid #FFFFFF;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     position: relative;
@@ -77,9 +74,7 @@ body {
     color: #1351d8;
 }
 
-/* ================================
-   CONTEÚDO
-================================ */
+/*   CONTEÚDO */
 .conteudo {
     flex: 1;
     padding: 40px;
@@ -88,7 +83,7 @@ body {
 
 /* TEXTO HOME */
 .lancamento p {
-    font-size: 0.50rem;
+    font-size: 1.1rem;
 }
 
 .lancamento img {
@@ -105,9 +100,7 @@ body {
 }
 
 
-/* ================================
-   VÍDEO CENTRALIZADO
-================================ */
+/*    VÍDEO CENTRALIZADO */
 .video {
     max-width: 800px;
     margin: 40px auto;
@@ -127,7 +120,7 @@ body {
 
 /* TEXTO DO LINK YOUTUBE */
 .video p {
-    font-size: 0.60rem;     /* tamanho do texto */
+    font-size: 0.85em;     /* tamanho do texto */
     margin-top: 5px;
     color: #555;
     text-align: center;
@@ -142,9 +135,7 @@ body {
 .video p a:hover {
     text-decoration: underline;
 }
-/* ================================
-   GALERIA
-================================ */
+/* GALERIA */
 .galeria {
     display: flex;
     gap: 20px;
@@ -156,9 +147,7 @@ body {
     border-radius: 10px;
 }
 
-/* ================================
-   COMPARAÇÃO
-================================ */
+/* COMPARAÇÃO */
 .comparacao {
     display: flex;
     justify-content: center;
@@ -231,9 +220,16 @@ body {
     transform: scale(1.1);
 }
 
-/* ================================
-   CONTATO
-================================ */
+/* CONTATO */
+.contato-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+}
+
+/* FORMULÁRIO */
 .contato-container {
     display: flex;
     align-items: center;
@@ -244,13 +240,16 @@ body {
 
 /* FORMULÁRIO */
 .formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     max-width: 400px;
     text-align: left;
 }
 
 .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex; 
+    flex-direction: column; 
     gap: 15px;
 }
 
@@ -259,16 +258,17 @@ body {
 .form-grid textarea {
     padding: 10px;
     border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-grid textarea {
-    grid-column: span 2;
     resize: none;
     height: 100px;
 }
 
 .botao-enviar {
-    grid-column: span 2;
+    
     padding: 10px 20px;
     background-color: #1351d8;
     color: #fff;
@@ -280,7 +280,7 @@ body {
 
 .botao-enviar:hover {
     background-color: #1b357e;
-    transform: scale(0.70);
+    transform: scale(0.95); 
 }
 
 /* IMAGEM CONTATO */
@@ -288,9 +288,7 @@ body {
     max-width: 420px;
 }
 
-/* ================================
-   FOOTER
-================================ */
+/* FOOTER */
 .footer {
     background-color: #1b357e;
     padding: 10px 30px;
@@ -300,6 +298,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .redes {
@@ -308,7 +307,7 @@ body {
 }
 
 .redes p {
-    color: #fff;
+    color: #e2d6d6; 
     margin-right: 10px;
 }
 
@@ -317,13 +316,22 @@ body {
     margin-right: 8px;
 }
 
+.copyart p a {
+    color: #e2d6d6; 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+.copyart p a:hover {
+    color: #ffffff; 
+    text-decoration: underline; 
+}
+
 .logo-footer img {
     height: 30px;
 }
 
-/* ================================
-   RESPONSIVO
-================================ */
+/* RESPONSIVO */
 @media (max-width: 768px) {
 
     .header {
