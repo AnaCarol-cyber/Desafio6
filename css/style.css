@@ -81,7 +81,7 @@ body {
 }
 
 .lancamento img {
-    max-width: 200%;
+    max-width: 100%;
     height: auto;
     border-radius: 20px;
 }
@@ -141,6 +141,7 @@ body {
 }
 
 .modelo img:hover {
+    cursor: pointer;
     transform: translateY(-10px) scale(1.20);
 }
 
@@ -276,8 +277,8 @@ body {
 
 
 .footer {
-    background-color: #1351d8;
-    padding: 20px 30px;
+    background-color: #1b357e;
+    padding: 15px 30px;
 }
 
 .footer-conteudo {
@@ -303,6 +304,7 @@ body {
 }
 
 .redes img:hover {
+    cursor: pointer;
     transform: translateY(-10px) scale(0.95);
 }
 .copyart p a {
