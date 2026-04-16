@@ -26,18 +26,17 @@
         <main class="conteudo">
            
             <section class="video">
-              <div class="video=container">
-                <iframe
-                    width ="560"
-                    height ="315"
-                    src ="https://www.youtube.com/embed/vQsryuNmsL0"
-                    title:"Youtube video player"
-                    frameborder ="0"
-                    allow ="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-                </div>
-
+               
+             <iframe 
+             width="1337" 
+             height="550" 
+             src="https://www.youtube.com/embed/vQsryuNmsL0" 
+             title="Ford Ranger 2022 | Gerações" 
+             frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+               allowfullscreen>
+            </iframe>
+                                 
                 <p>
                     Caso o vídeo não carregue, 
                     <a href="https://www.youtube.com/watch?v=vQsryuNmsL0" target="_blank">
@@ -52,7 +51,7 @@
         <label>
             <input type="checkbox" name="modelo">
             <div class="info-modelo">
-                <span class="nome-modelo">Ranger Storm 3.2 Diesel 4x4 AT 2022</span><br>
+                <span class="nome-modelo">Ranger Storm 3.2 Diesel 4x4 AT 2022</span>
                 <div class="linha-preco">
                 <span class="preco">A partir de R$ 222.790</span>
                  <img src = "img/info.png" alt="Informações adicionais" class="info-icon">
@@ -67,7 +66,7 @@
         <label>
             <input type="checkbox" name="modelo" checked>
             <div class="info-modelo">
-                <span class="nome-modelo">Ranger XL Cabine Simples 2.2 Diesel 4x4 MT 2022</span><br>
+                <span class="nome-modelo">Ranger XL Cabine Simples 2.2 Diesel 4x4 MT 2022</span>
                 
                 <div class ="linha-preco">
                 <span class="preco">A partir de R$ 183.850</span>
@@ -83,7 +82,7 @@
         <label>
             <input type="checkbox" name="modelo" checked>
             <div class="info-modelo">
-                <span class="nome-modelo">Ranger XLS 2.2 Diesel 4x4 AT 2022</span><br>
+                <span class="nome-modelo">Ranger XLS 2.2 Diesel 4x4 AT 2022</span>
                 
                 <div class="linha-preco">
                 <span class="preco">A partir de R$ 220.690</span>                                
@@ -97,8 +96,13 @@
 </section>
 
 <div class="botao-comparar">
-    <button>Comparar Carros</button>
+    <button id="btnComparar">Comparar Carros</button>
 </div>
+    <script>
+    document.getElementById("btnComparar").addEventListener("click", function() {
+        alert("Em breve você poderá comparar os modelos selecionados!");
+    });
+    </script>
             </main>
 
   <footer class="footer">
