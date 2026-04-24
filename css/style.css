@@ -77,7 +77,7 @@ body {
 }
 
 .lancamento p {
-    font-size: 1rem;
+    font-size: 1.0rem;
 }
 
 .lancamento img {
@@ -107,21 +107,16 @@ body {
     height: 100px;
 }
 
-.video p {
-    margin-top: 10px;
-    font-size: 0.95em;
-    color: #141414;
-    text-align: center;
-}
 
-.video p a {
-    color: #1351d8;
+  .video p {
+    margin-top: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
-    text-decoration: none;
-}
+    color: #3d3dde;
+    line-height: 1.0;
+    text-align: center;
 
-.video p a:hover {
-    text-decoration: underline;
+    white-space: nowrap; 
 }
 
 
