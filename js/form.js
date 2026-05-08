@@ -46,7 +46,7 @@ function Post(form) {
     );
 
     console.log("Dados enviados:", data);
-    alert("Obrigado, " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
+    alert("Obrigado Sr(a), " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
 
     return false;
 }

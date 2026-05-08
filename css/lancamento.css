@@ -35,14 +35,16 @@ img.photocar {
 .textmodel {
     display: block;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     color: #1351d8;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
     
 }
 .textprice {
     display: block;
     text-align: left;
-    font-size: 10px;
+    font-size: 11px;
+     font-family:'Arial', Helvetica, sans-serif;
 }
 
 table {
