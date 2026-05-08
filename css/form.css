@@ -1,0 +1,122 @@
+/* ===============================
+   IMAGEM DO FORMULÁRIO
+================================ */
+
+.contato-imagem img {
+    display: block;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contato-imagem img:hover {
+    cursor: pointer;
+    transform: translateY(-10px) scale(1.10);
+}
+
+/* ===============================
+   CONTAINER PRINCIPAL
+================================ */
+
+.contato-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* ===============================
+   FORMULÁRIO
+================================ */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ===============================
+   GRID DOS CAMPOS
+================================ */
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs, select e textarea */
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* bordas arredondadas */
+    font-size: 14px;
+}
+
+/* Remove borda azul padrão */
+.form-grid input:focus-visible,
+.form-grid select:focus-visible,
+.form-grid textarea:focus-visible {
+    outline: none;
+    border-color: #1351d8;
+}
+
+/* Textarea (caso use futuramente) */
+.form-grid textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* ===============================
+   BOTÃO
+================================ */
+
+.botao-enviar {
+    width: 120px;
+    padding: 10px 20px;
+    background-color: #1351d8;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.botao-enviar:hover {
+    background-color: #1b357e;
+    transform: scale(0.95);
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contato-imagem img {
+        width: 100%;
+    }
+
+    .formulario {
+        max-width: 100%;
+    }
+}

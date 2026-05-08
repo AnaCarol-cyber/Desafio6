@@ -1,33 +1,4 @@
-/* ================================
-   RESET CSS - ERIC MEYER
-================================ */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-article, aside, footer, header, nav, section {
-    display: block;
-}
-
-* {
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
     min-height: 100vh;
@@ -103,190 +74,90 @@ body {
     text-decoration: none;
 }
 
-.video {
-    max-width: 700px;
+
+/* ================================
+   CARROSSEL HOME
+================================ */
+
+#carousel {
+    position: relative;
     width: 100%;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1200px;
+    height: 65vh;
+    margin: 0 auto;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
 }
 
-
-
-.video iframe {
-    display: block;
-    border-radius: 12px;
-}
-
-
-
-  .video p {
-    margin-top: 20px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #3d3dde;
-    line-height: 1.0;
+/* Título do carrossel */
+#carousel-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 10px;
     text-align: center;
+    z-index: 10;
 }
 
-
-.galeria {
-    display: flex;
-    gap: 20px;
-    margin: 40px 0;
-}
-
-.galeria img {
-    width: 80%;
-    border-radius: 10px;
-}
-
-.modelo img {
-    transition: transform 0.5s ease;
-    touch-action: manipulation;
-}
-
-.modelo img:hover {
-    cursor: pointer;
-    transform: translateY(-10px) scale(1.20);
-}
-
-
-.comparacao {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 70px;
-}
-
-.modelo {
-    text-align: center;
-}
-
-.modelo label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-}
-
-.modelo input[type="checkbox"] {
-
-    transform: scale(1.3);
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.info-modelo,
-.texto {
-    display: flex;
-    flex-direction: column;
-}
-
-.nome-modelo {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
+#carousel-title a {
+    color: #fff;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #1b357e;
-    line-height: 1.8;
-    word-break: break-word;
+    text-decoration: none;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
-.linha-preco {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 4px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #191b1e;
-}
-
-.info-icon {
-    width: 25px;
-    height: 25px;
-    margin-left: 9px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.botao-comparar {
-    margin-top: 80px;
-    text-align: center;
-}
-
-.botao-comparar button {
-    padding: 12px 35px;
-    font-size: 1rem;
+/* Setas */
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: #fff;
     font-weight: bold;
-    background-color: #1351d8;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    z-index: 20;
+    padding: 15px;
+    user-select: none;
+    transition: transform 0.2s ease;
 }
 
-.botao-comparar button:hover {
-    background-color: #1b357e;
-    transform: scale(1.08);
+#prev:hover,
+#next:hover {
+    transform: translateY(-50%) scale(1.15);
 }
 
-.contato-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 40px;
+#prev { left: 15px; }
+#next { right: 15px; }
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+    #carousel {
+        height: 45vh;
+    }
+
+    #carousel-title a {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+
+    #prev,
+    #next {
+        font-size: 40px;
+    }
 }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%;
-    text-align: left;
-}
 
-.form-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-grid input,
-.form-grid select,
-.form-grid textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.form-grid textarea {
-    height: 100px;
-    resize: none;
-}
-
-.botao-enviar {
-    width: 100px;
-    padding: 10px 20px;
-    background-color: #1351d8;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.botao-enviar:hover {
-    background-color: #1b357e;
-    transform: scale(0.95);
-}
-
-.contato-imagem img {
-    max-width: 420px;
-}
 
 
 .footer {

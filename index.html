@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+ <head>
     <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ford</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+     
+   <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/carousel.js"></script>
 </head>
 
 <body>
@@ -25,18 +28,21 @@
 
     <main class="conteudo">
 
-        <section class="lancamento">
+    <div id="carousel">
+        <div id="prev" onclick="Carousel.Prev()">&#10094;</div>
+        <div id="next" onclick="Carousel.Next()">&#10095;</div>
 
-            <a href="lancamento.html">
-                <img src="img/imagem_1.jpg" alt="Novo veículo Ford">
-            </a>
+        <div id="carousel-title"></div>
+    </div>
 
-            <p>
-                Esta é a nossa Ranger Ford 2022. Verifique novidades
-                <a href="lancamento.html" class="link-lancamento">aqui</a>.
-            </p>
-        </section>
-    </main>
+    <script>
+         carouselArr.push(new Carousel("imagem_1.jpg","Esta é a nova Ranger Ford 2022. Verifique novidades.","lancamento.html"));
+            carouselArr.push(new Carousel("imagem_2.jpg","Ford a nossa história","#"));
+            carouselArr.push(new Carousel("imagem_3.jpg","Nova Ford Bronco Sport 2022","lancamento.html"));
+            Carousel.Start(carouselArr);
+    </script>
+
+</main>
 
     <footer class="footer">
         <div class="footer-conteudo">
