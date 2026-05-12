@@ -26,27 +26,6 @@ function GetCarArrPosition(arr, carClass) {
     return -1;
 }
 
-/*
-function SetCarToCompare(el, carClass) {
-    if (!(carClass instanceof Car)) {
-        throw "You need set a Car Class";
-    }
-
-    if (el.checked) {
-        if (carArr.length >= 2) {
-            alert("Você só pode comparar dois veículos");
-            el.checked = false;
-            return;
-        }
-        carArr.push(carClass);
-    } else {
-        let pos = GetCarArrPosition(carArr, carClass);
-        if (pos > -1) {
-            carArr.splice(pos, 1);
-        }
-    }
-}
-*/
 
 function SetCarToCompare(el, carClass) {
     if (!(carClass instanceof Car)) {

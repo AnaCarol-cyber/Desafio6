@@ -1,4 +1,32 @@
 
+
+.conteudo iframe{
+    max-width: 800%;
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.conteudo iframe {
+    display: block;
+    border-radius: 12px;
+}
+
+
+
+  .conteudo p{
+    margin-top: 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #3d3dde;
+    line-height: 1.0;
+    text-align: center;
+}
+
 ul.modelcars {
     display: block;
     text-align: center;
@@ -118,4 +146,34 @@ img.photocar:hover {
 .btn-fechar:hover {
     background-color: #1b357e;
     transform: scale(1.08);
+}
+
+
+
+@media (min-width: 1328px) {
+  .conteudo iframe {
+    width: 1337px;
+    height: 550px;
+  }
+  .conteudo p{
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1327px) {
+  .conteudo iframe {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+@media (max-width: 1312px) {
+  
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
 }

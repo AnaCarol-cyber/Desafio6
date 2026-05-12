@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+
 body {
     min-height: 100vh;
     display: flex;
@@ -43,7 +45,7 @@ body {
 .menu a {
     margin: 0 20px;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight:700;
     color: #1b357e;
     text-decoration: none;
 }
@@ -58,14 +60,15 @@ body {
     text-align: center;
 }
 
-.lancamento p {
-    font-size: 1.0rem;
+.img{
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.lancamento img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
+.conteudo img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .link-lancamento {
@@ -80,19 +83,41 @@ body {
 ================================ */
 
 #carousel {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 65vh;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 520px;              /* 🔑 CONTROLE REAL */
+  margin: 0 auto;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 20px;
+  box-sizing: border-box;
 
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    overflow: hidden;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+#carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(18px);
+  opacity: 0.35;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+ 
+}
+
+#carousel > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Título do carrossel */
@@ -107,11 +132,10 @@ body {
 
 #carousel-title a {
     color: #fff;
-    font-size: 2.9rem;
+    font-size: 2.0rem;
     font-weight: 700;
     text-decoration: none;
     text-shadow: 2px 2px 8px rgba(15, 11, 155, 0.8);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Setas */
@@ -120,46 +144,74 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 60px;
+    font-size: clamp(32px, 6vw, 60px);
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     z-index: 20;
-    padding: 15px;
-    -webkit-user-select: none;
+    padding: 10px;
     user-select: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 #prev:hover,
 #next:hover {
     transform: translateY(-50%) scale(1.15);
+    opacity: 0.9;
 }
 
-#prev { left: 15px; }
-#next { right: 15px; }
-
+#prev { left: 10px; }
+#next { right: 10px; }
 /* ================================
    RESPONSIVO
 ================================ */
 
 @media (max-width: 768px) {
     #carousel {
-        height: 45vh;
-    }
+    height: 360px;
+    border-radius: 16px;
+  }
 
-    #carousel-title a {
-        font-size: 1.2rem;
-        padding: 0 10px;
-    }
+  #carousel-title a {
+    font-size: 1.2rem;
+  }
 
     #prev,
     #next {
         font-size: 40px;
     }
+
+
+      .footer-conteudo {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+
+  .logo-footer img {
+    height: 45px;
+  }
+ 
+  #carousel-title {
+    padding: 10px 8px;
+  }
+
+  #carousel-title a {
+    font-size: 1.5rem;
+  }
+
 }
 
-
+@media (max-height: 500px) {
+  #carousel {
+    aspect-ratio: 21 / 9;
+  }
+}
 
 
 .footer {
@@ -209,17 +261,26 @@ body {
 }
 
 @media (min-width: 1328px) {
-  .video iframe {
+
+   #carousel {
+    height: 550px;
+  } 
+  .conteudoiframe {
     width: 1337px;
     height: 550px;
   }
-  .video p{
+  .conteudo p{
     white-space: nowrap;
   }
 }
 
 @media (max-width: 1327px) {
-  .video iframe {
+
+   #carousel {
+    height: 480px;
+  }
+
+  .conteudo iframe {
     width: 100%;
     max-width: 100%;
     aspect-ratio: 16 / 9;
@@ -246,7 +307,7 @@ body {
     gap: 20px;
     flex-wrap: wrap;
   }
-    .video {
+    .conteudo {
     max-width: 90%;
     }
  
@@ -259,21 +320,22 @@ body {
 }
 
 @media (max-width: 1024px) {
+  
 
-  .video {
+  .conteudo {
     max-width: 90%;
   }
 
-   .video iframe {
+   .conteudo iframe {
     width: 100%;
     max-width: 100%;
   }
 
 
-  .video p {
+  .conteudo p {
     font-size: 1.1rem;
   }
-  .galeria img{
+  .img.photocar{
     width: 70%;
   }
 
@@ -285,6 +347,23 @@ body {
 
 
 @media (max-width: 1058px) and (min-width: 785px) {
+ 
+ #carousel {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  #carousel-title a {
+    font-size: 1.3rem;
+    padding: 0 12px;
+  }
+
+  #prev,
+  #next {
+    font-size: 42px;
+  }
+}
+ 
   .comparacao {
     display: flex;
     flex-wrap: wrap;
@@ -292,7 +371,7 @@ body {
     gap: 24px;
   }
 
-  .modelo {
+  .img.photocar {
     flex: 1 1 280px;
     max-width: 360px;
   }
@@ -300,7 +379,7 @@ body {
   .conteudo {
     padding: 24px;
   }
-    .video p {
+    .conteudo p {
     max-width: 100%;
     text-align: center;
     line-height: 1.4;
@@ -308,9 +387,14 @@ body {
     word-break: break-word;
     overflow-wrap: break-word;
   }
-}
 
-@media (max-width: 784px) {
+
+@media (max-width: 784px)
+ {
+  #carousel {
+  margin-left: auto;
+  margin-right: auto;
+}
   .header {
     flex-direction: column;
     gap: 10px;
@@ -320,13 +404,13 @@ body {
   padding: 8px 12px;
 }
 
-  .video iframe {
+  .conteudo iframe {
     width: 100%;
     aspect-ratio: 16/9; 
     height: auto;
     border-radius: 12px;
   }
-  .video p {
+  .conteudo p {
     font-size: 0.95rem;
     white-space: normal;
     word-wrap: break-word;
@@ -343,7 +427,7 @@ body {
     gap: 10px;
   }
 
-  .galeria img {
+  .img.photocar {
     width: 100%;
     max-width: 320px;
   }
@@ -352,13 +436,13 @@ body {
     transform: scale(1.05);
   }
 
-  .galeria,
+  .ul.modelcars,
   .comparacao,
   .contato-container,
   .footer-conteudo {
     flex-direction: column;
   }
- .modelo {
+ .img.photocar {
   width: 100%;
   max-width: 100%;
  }
@@ -373,5 +457,42 @@ body {
     align-items: center;
     gap: 15px;
     text-align: center;
+  }
+}
+@media (min-width: 769px) {
+
+  #carousel {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .footer-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+
+  .redes,
+  .copyart,
+  .logo-footer {
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  #carousel {
+    height: 300px;
+  }
+
+  #carousel-title {
+    padding: 8px 6px;
+    position: block center;
+  }
+
+  #carousel-title a {
+    font-size: 0.95rem;
+    position: relative;
+  
   }
 }

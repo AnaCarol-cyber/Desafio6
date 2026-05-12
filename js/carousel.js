@@ -28,7 +28,7 @@ class Carousel {
 
         let carouselDiv = document.getElementById("carousel");
         carouselDiv.style.backgroundImage = `url(img/${item.image})`;
-        carouselDiv.style.backgroundSize = "contain";
+        carouselDiv.style.backgroundSize = "cover";
         carouselDiv.style.backgroundPosition = "center";
 
         let titleDiv = document.getElementById("carousel-title");
