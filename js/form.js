@@ -1,4 +1,4 @@
-class contato {
+{class contato {
     constructor(nome, sobrenome, email, cpf, telefone, contato) {
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -45,8 +45,14 @@ function Post(form) {
         form.contato.value  
     );
 
-    console.log("Dados enviados:", data);
+    let lista = JSON.parse(localStorage.getItem("contatos")) || [];
+    lista.push(data);
+
+    localStorage.setItem("contatos", JSON.stringify(lista));
+
+    console.table(lista);
+
     alert("Obrigado Sr(a), " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
 
     return false;
-}
+}}

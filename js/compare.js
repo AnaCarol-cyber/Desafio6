@@ -26,6 +26,7 @@ function GetCarArrPosition(arr, carClass) {
     return -1;
 }
 
+/*
 function SetCarToCompare(el, carClass) {
     if (!(carClass instanceof Car)) {
         throw "You need set a Car Class";
@@ -45,6 +46,38 @@ function SetCarToCompare(el, carClass) {
         }
     }
 }
+*/
+
+function SetCarToCompare(el, carClass) {
+    if (!(carClass instanceof Car)) {
+        throw "You need set a Car Class";
+    }
+
+    if (el.checked) {
+
+        // BLOQUEIA se já houver 2 carros
+        if (carArr.length >= 2) {
+            alert("Você só pode selecionar 2 carros por vez");
+            el.checked = false;
+            return;
+        }
+
+        carArr.push(carClass);
+
+        // Atualiza a comparação se ela já estiver aberta
+        if (carArr.length === 2 &&
+            document.getElementById("compare").style.display === "block") {
+            UpdateCompareTable();
+        }
+
+    } else {
+        const pos = GetCarArrPosition(carArr, carClass);
+        if (pos > -1) {
+            carArr.splice(pos, 1);
+        }
+    }
+}
+
 
 function ShowCompare() {
     if (carArr.length < 2) {
