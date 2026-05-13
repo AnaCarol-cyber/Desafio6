@@ -81,95 +81,101 @@ body {
 /* ================================
    CARROSSEL HOME
 ================================ */
-
 #carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: 520px;              /* 🔑 CONTROLE REAL */
-  margin: 0 auto;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding: 20px;
-  box-sizing: border-box;
-
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 60vh; /* altura proporcional à tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    transition: background-image 1s ease-in-out;
 }
-
-#carousel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  filter: blur(18px);
-  opacity: 0.35;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
- 
-}
-
-#carousel > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Título do carrossel */
 #carousel-title {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 15px 10px;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%; /* limita largura para caber em telas menores */
+    font-size: 1.7rem;
     text-align: center;
-    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    word-wrap: break-word; /* força quebra de linha */
+    white-space: normal;   /* permite quebra automática */
 }
 
 #carousel-title a {
-    color: #fff;
-    font-size: 2.0rem;
-    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold; /* deixa em negrito */
+    color: #ffffff; /* cor branca para contraste */
+    text-shadow: 2px 2px 4px rgba(26, 121, 203, 0.7); /* sombra para destacar sobre a imagem */
     text-decoration: none;
-    text-shadow: 2px 2px 8px rgba(15, 11, 155, 0.8);
 }
 
-/* Setas */
-#prev,
-#next {
+#prev, #next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: clamp(32px, 6vw, 60px);
-    color: #fff;
-    font-weight: bold;
+    font-size: 2rem;
+    color: white;
     cursor: pointer;
-    z-index: 20;
     padding: 10px;
-    user-select: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    transition: background 0.3s;
 }
 
-#prev:hover,
-#next:hover {
-    transform: translateY(-50%) scale(1.15);
-    opacity: 0.9;
+#prev:hover, #next:hover {
+    background: rgba(0,0,0,0.6);
 }
 
-#prev { left: 10px; }
-#next { right: 10px; }
+#prev { left: 20px; }
+#next { right: 20px; }
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
+
 /* ================================
    RESPONSIVO
 ================================ */
 
 @media (max-width: 768px) {
     #carousel {
+    width: 100%;
+    max-width: 100%;
     height: 360px;
-    border-radius: 16px;
+
+    padding: 0;               /* 🔑 remove a abertura */
+    background-size: cover;   /* 🔑 preenche tudo */
+    background-position: center;
+    border-radius: 12px;
+  }
+  
+   #carousel::before {
+    filter: blur(14px);
+    opacity: 0.4;
   }
 
   #carousel-title a {
