@@ -1,11 +1,12 @@
 {class contato {
-    constructor(nome, sobrenome, email, cpf, telefone, contato) {
+    constructor(nome, sobrenome, email, cpf, telefone, contato, mensagem) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
         this.contato = contato;
+        this.mensagem = mensagem;
     }
 }
 
@@ -42,7 +43,8 @@ function Post(form) {
         form.email.value,
         form.cpf.value,
         form.telefone.value,
-        form.contato.value  
+        form.contato.value,
+        form.mensagem.value
     );
 
     let lista = JSON.parse(localStorage.getItem("contatos")) || [];
@@ -53,6 +55,6 @@ function Post(form) {
     console.table(lista);
 
     alert("Obrigado Sr(a), " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
-
+    form.reset();
     return false;
 }}
