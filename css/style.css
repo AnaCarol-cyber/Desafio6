@@ -84,7 +84,7 @@ body {
 #carousel {
     position: relative;
     width: 100%;
-    height: 60vh; /* altura proporcional à tela */
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,21 +97,21 @@ body {
     bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 80%; /* limita largura para caber em telas menores */
+    max-width: 80%;
     font-size: 1.7rem;
     text-align: center;
     background: rgba(0,0,0,0.5);
     padding: 10px 20px;
     border-radius: 5px;
-    word-wrap: break-word; /* força quebra de linha */
-    white-space: normal;   /* permite quebra automática */
+    word-wrap: break-word; 
+    white-space: normal;   
 }
 
 #carousel-title a {
     font-family: 'Roboto', sans-serif;
-    font-weight: bold; /* deixa em negrito */
-    color: #ffffff; /* cor branca para contraste */
-    text-shadow: 2px 2px 4px rgba(26, 121, 203, 0.7); /* sombra para destacar sobre a imagem */
+    font-weight: bold; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(26, 121, 203, 0.7); 
     text-decoration: none;
 }
 
@@ -167,8 +167,8 @@ body {
     max-width: 100%;
     height: 360px;
 
-    padding: 0;               /* 🔑 remove a abertura */
-    background-size: cover;   /* 🔑 preenche tudo */
+    padding: 0;               
+    background-size: cover;  
     background-position: center;
     border-radius: 12px;
   }

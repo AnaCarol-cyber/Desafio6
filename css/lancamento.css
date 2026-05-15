@@ -115,7 +115,7 @@ div#compare {
 }
 
 img.photocar {
-    display: block;   /* correto para imagens */
+    display: block;  
     margin: 60px auto;
     width: 90%;
     border-radius: 10px;
@@ -131,7 +131,7 @@ img.photocar:hover {
 .btn-fechar {
     height: 40px;
     width: 200px;
-    background-color: #1351d8; /* azul Ford */
+    background-color: #1351d8; 
     color: #ffffff;
     border: none;
     border-radius: 15px;

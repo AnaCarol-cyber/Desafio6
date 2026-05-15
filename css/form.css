@@ -56,18 +56,18 @@
     gap: 15px;
 }
 
-/* Inputs, select e textarea */
+
 .form-grid input,
 .form-grid select,
 .form-grid textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* bordas arredondadas */
+    border-radius: 8px; 
     font-size: 14px;
 }
 
-/* Remove borda azul padrão */
+
 .form-grid input:focus-visible,
 .form-grid select:focus-visible,
 .form-grid textarea:focus-visible {
