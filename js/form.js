@@ -47,12 +47,10 @@ function Post(form) {
         form.mensagem.value
     );
 
-    let lista = JSON.parse(localStorage.getItem("contatos")) || [];
-    lista.push(data);
+     console.log("Objeto enviado:");
+    console.log(data);
 
-    localStorage.setItem("contatos", JSON.stringify(lista));
-
-    console.table(lista);
+    
 
     alert("Obrigado Sr(a), " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
     form.reset();
