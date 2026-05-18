@@ -41,14 +41,14 @@ class Carousel {
         let item = carouselArr[Carousel._sequence];
         let carouselDiv = document.getElementById("carousel");
         carouselDiv.style.backgroundImage = `url(img/${item.image})`;
-        carouselDiv.style.backgroundSize = "contain"; // imagem inteira visível
+        carouselDiv.style.backgroundSize = "contain"; 
         carouselDiv.style.backgroundRepeat = "no-repeat";
         carouselDiv.style.backgroundPosition = "center";
 
         let titleDiv = document.getElementById("carousel-title");
         titleDiv.innerHTML = `<a href="${item.url}" style="color:white; text-decoration:none;">${item.title}</a>`;
 
-        // Atualiza bolinhas
+       
         document.querySelectorAll(".dot").forEach((dot, i) => {
             dot.classList.toggle("active", i === Carousel._sequence);
         });

@@ -34,7 +34,6 @@ function SetCarToCompare(el, carClass) {
 
     if (el.checked) {
 
-        // BLOQUEIA se já houver 2 carros
         if (carArr.length >= 2) {
             alert("Você só pode selecionar 2 carros por vez");
             el.checked = false;
@@ -43,7 +42,6 @@ function SetCarToCompare(el, carClass) {
 
         carArr.push(carClass);
 
-        // Atualiza a comparação se ela já estiver aberta
         if (carArr.length === 2 &&
             document.getElementById("compare").style.display === "block") {
             UpdateCompareTable();
