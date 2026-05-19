@@ -78,9 +78,7 @@ body {
 }
 
 
-/* ================================
-   CARROSSEL HOME
-================================ */
+
 #carousel {
     position: relative;
     width: 100%;
@@ -157,9 +155,9 @@ body {
     background-color: white;
 }
 
-/* ================================
+/*
    RESPONSIVO
-================================ */
+ */
 
 @media (max-width: 768px) {
     #carousel {
