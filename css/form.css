@@ -102,6 +102,50 @@
     transform: scale(0.95);
 }
 
+.lgpd-container {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.lgpd-texto {
+    margin-bottom: 12px;
+    
+}.checkbox-lgpd {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: start;
+    column-gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.checkbox-lgpd input {
+    margin-top: 3px; 
+    cursor: pointer;
+}
+
+.checkbox-lgpd span {
+    line-height: 1.0;
+}
+
+.checkbox-lgpd a {
+    color: #0056ff;
+    text-decoration: underline;
+}
+
+.mensagem-form {
+    margin-top: 12px;
+    font-size: 14px;
+    display: none;
+}
+
+.mensagem-form.erro {
+    color: #d93025;
+}
+
+.mensagem-form.sucesso {
+    color: #188038;
+}
 /* ===============================
    RESPONSIVO
 ================================ */

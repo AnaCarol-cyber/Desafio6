@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ford</title>    
+    <title>Ford</title>
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <script src="js/form.js"></script>
+    <script src="js/form.js" defer></script>
 </head>
 
 <body>
@@ -41,33 +41,62 @@
                 <form onsubmit="return Post(this);">
                     <div class="form-grid">
 
-                    <input type="text" name="nome" placeholder="NOME*" required pattern="[A-Za-zÀ-ÿ\s]+"
-                        title="Digite apenas letras">
-                        
-                         <input type="text" name="sobrenome" placeholder="SOBRENOME*" required pattern="[A-Za-zÀ-ÿ\s]+"
-                        title="Digite apenas letras">
+                        <input type="text" name="nome" placeholder="NOME*" required pattern="[A-Za-zÀ-ÿ\s]+"
+                            title="Digite apenas letras">
 
-                    <input type="email" name="email" placeholder="E-MAIL*" required>
+                        <input type="text" name="sobrenome" placeholder="SOBRENOME*" required pattern="[A-Za-zÀ-ÿ\s]+"
+                            title="Digite apenas letras">
 
-                    <input type="text" name="cpf" placeholder="CPF*" required maxlength="14" onkeyup="handleCPF(event)"
-                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title=" Digite apenas números">
-                 
-                
-                    <input type="tel" name="telefone" placeholder="(DD) Telefone*" required maxlength="15"
-                        onkeyup="handlePhone(event)" pattern="\([0-9]{2}\)\s[0-9]{4,5}-[0-9]{4}"
-                        title="Digite no formato (11) 91234-5678">
-                    
+                        <input type="email" name="email" placeholder="E-MAIL*" required>
 
-                    <select name="contato" required aria-label="Tipo de contato">
-                        <option value="">Tipo de contato</option>
-                        <option>Elogio</option>
-                        <option>Reclamação</option>
-                        <option>Solicitação</option>
-                    </select>
+                        <input type="text" name="cpf" placeholder="CPF*" required maxlength="14"
+                            onkeyup="handleCPF(event)" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                            title=" Digite apenas números">
 
-                    <textarea name="mensagem" placeholder="Sua mensagem*" required></textarea>
 
-                    <button type="submit" class="botao-enviar">Enviar</button>
+                        <input type="tel" name="telefone" placeholder="(DD) Telefone*" required maxlength="15"
+                            onkeyup="handlePhone(event)" pattern="\([0-9]{2}\)\s[0-9]{4,5}-[0-9]{4}"
+                            title="Digite no formato (11) 91234-5678">
+
+
+                        <select name="contato" required aria-label="Tipo de contato">
+                            <option value="">Tipo de contato</option>
+                            <option>Elogio</option>
+                            <option>Reclamação</option>
+                            <option>Solicitação</option>
+                        </select>
+
+                        <textarea name="mensagem" placeholder="Sua mensagem*" required></textarea>
+
+                        <div class="lgpd-container">
+
+                            <p class="lgpd-texto">
+                                Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você.
+                                A qualquer momento, será possível editar ou remover tais dados.
+                            </p>
+
+                            <label class="checkbox-lgpd">
+                                <input type="checkbox" id="termos" required onchange="validarLGPD()">
+                                <span>
+                                    Sim. Li e concordo com os
+                                    <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">
+                                        Termos e Condições
+                                    </a>.
+                                </span>
+                            </label>
+
+                            <label class="checkbox-lgpd">
+                                <input type="checkbox" id="ofertas" onchange="validarLGPD()">
+                                <span>
+                                    Sim. Também quero receber descontos e novidades.
+                                </span>
+                            </label>
+
+                        </div>
+                        <div id="mensagem-form" class="mensagem-form"></div>
+                        <button type="submit" id="btnEnviar" class="botao-enviar">
+                            Enviar
+                        </button>
 
                 </form>
 
