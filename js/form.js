@@ -36,49 +36,24 @@ function phoneMask(value) {
     return value;
 }
 
+window.onload = function() {
+  const aceite = document.getElementById("aceite");
+  const botao = document.querySelector(".botao-enviar");
 
-function validarEnvio() {
-    const termos = document.getElementById("termos");
+  botao.disabled = true; 
 
-    if (!termos.checked) {
-        alert("Você precisa aceitar os Termos e Condições para continuar.");
-        return false;
-    }
-    return true;
-}
+  aceite.addEventListener("change", function() {
+    botao.disabled = !this.checked;
+  });
+};
+
 function Post(form) {
-
-    const msg = document.getElementById("mensagem-form");
-    msg.style.display = "none";
-    msg.className = "mensagem-form";
-
-    // 🔴 Validação dos campos
-    if (
-        !form.nome.value.trim() ||
-        !form.sobrenome.value.trim() ||
-        !form.email.value.trim() ||
-        !form.cpf.value.trim() ||
-        !form.telefone.value.trim() ||
-        !form.contato.value ||
-        !form.mensagem.value.trim()
-    ) {
-        msg.textContent = "Por favor, preencha todos os campos obrigatórios.";
-        msg.classList.add("erro");
-        msg.style.display = "block";
-        return false;
-    }
-
-    // 🔴 Validação LGPD
-    const termos = document.getElementById("termos");
-    if (!termos.checked) {
-        msg.textContent = "Você precisa aceitar os Termos e Condições para continuar.";
-        msg.classList.add("erro");
-        msg.style.display = "block";
-        return false;
-    }
-
-    // ✅ Criação do objeto
-    const data = new Contato(
+    const aceite = document.getElementById("aceite");
+  if (!aceite.checked) {
+    alert("Você precisa marcar 'Sim. Li e concordo com os Termos e Condições' para enviar.");
+    return false;
+  }
+    let data = new contato(
         form.nome.value,
         form.sobrenome.value,
         form.email.value,
@@ -88,19 +63,12 @@ function Post(form) {
         form.mensagem.value
     );
 
-    console.log("Objeto enviado:", data);
+     console.log("Objeto enviado:");
+    console.log(data);
 
-    // ✅ Mensagem de sucesso
-    msg.textContent =
-        "Obrigado, " +
-        data.nome +
-        "! Seus dados foram enviados com sucesso.";
+    
 
-    msg.classList.add("sucesso");
-    msg.style.display = "block";
-
+    alert("Obrigado Sr(a), " + data.nome + " " + data.sobrenome + "! Seus dados foram enviados com sucesso.");
     form.reset();
-    document.getElementById("btnEnviar").disabled = true;
-
     return false;
 }}

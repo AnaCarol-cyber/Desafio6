@@ -9,7 +9,7 @@
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <script src="js/form.js" defer></script>
+    <script src="js/form.js"></script>
 </head>
 
 <body>
@@ -68,35 +68,23 @@
 
                         <textarea name="mensagem" placeholder="Sua mensagem*" required></textarea>
 
-                        <div class="lgpd-container">
+                        <p>
+                            Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você.
+                            A qualquer momento, será possível editar ou remover tais dados.
+                            <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank" rel="noopener noreferrer">Termos e
+                                Condições</a>
+                        </p>
 
-                            <p class="lgpd-texto">
-                                Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você.
-                                A qualquer momento, será possível editar ou remover tais dados.
-                            </p>
+                        <label> 
+                            <input type="checkbox" id="aceite" required>
+                            Sim. Li e concordo com os Termos e Condições
+                        </label>
+                        <label>
+                            <input type="checkbox" id="novidades">
+                            Sim. Também quero receber descontos e novidades
+                        </label>
 
-                            <label class="checkbox-lgpd">
-                                <input type="checkbox" id="termos" required onchange="validarLGPD()">
-                                <span>
-                                    Sim. Li e concordo com os
-                                    <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">
-                                        Termos e Condições
-                                    </a>.
-                                </span>
-                            </label>
-
-                            <label class="checkbox-lgpd">
-                                <input type="checkbox" id="ofertas" onchange="validarLGPD()">
-                                <span>
-                                    Sim. Também quero receber descontos e novidades.
-                                </span>
-                            </label>
-
-                        </div>
-                        <div id="mensagem-form" class="mensagem-form"></div>
-                        <button type="submit" id="btnEnviar" class="botao-enviar">
-                            Enviar
-                        </button>
+                        <button type="submit" class="botao-enviar">Enviar</button>
 
                 </form>
 
