@@ -48,11 +48,7 @@ window.onload = function() {
 };
 
 function Post(form) {
-    const aceite = document.getElementById("aceite");
-  if (!aceite.checked) {
-    alert("Você precisa marcar 'Sim. Li e concordo com os Termos e Condições' para enviar.");
-    return false;
-  }
+   
     let data = new contato(
         form.nome.value,
         form.sobrenome.value,
